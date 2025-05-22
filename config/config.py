@@ -1,9 +1,9 @@
-import os
+import streamlit as st
 from pymongo import MongoClient
 from pymongo.server_api import ServerApi
 
 def get_db():
-    uri = os.getenv("MONGO_URI")  # Ambil URI dari secrets
+    uri = st.secrets["MONGO_URI"] # Ambil URI dari secrets
     client = MongoClient(uri, server_api=ServerApi('1'))
     try:
         client.admin.command('ping')
