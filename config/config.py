@@ -1,8 +1,9 @@
+import os
 from pymongo import MongoClient
 from pymongo.server_api import ServerApi
 
 def get_db():
-    uri = "mongodb+srv://ilhamhattamanggala123:IlhamHatta311202@bigdata.yymouit.mongodb.net/?appName=BigData"
+    uri = os.getenv("MONGO_URI")  # Ambil URI dari secrets
     client = MongoClient(uri, server_api=ServerApi('1'))
     try:
         client.admin.command('ping')

@@ -1,0 +1,13 @@
+# Abaikan folder berisi rahasia Streamlit
+.streamlit/secrets.toml
+
+# Abaikan file pycache
+__pycache__/
+
+# Abaikan file sistem
+*.pyc
+.DS_Store
+.env
+
+# Abaikan file log
+*.log
